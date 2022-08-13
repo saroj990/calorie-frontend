@@ -10,5 +10,6 @@
   "scssFormatter.printWidth": 80,
   "files.associations": {
     "*.js": "javascriptreact",
-  }
+  },
+  "editor.tabSize": 2
 }
