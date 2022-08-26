@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.myIcon {
+  @apply bg-white text-dark-purple text-3xl rounded-full absolute -right-3 top-9 border border-slate-500 cursor-pointer
+}
