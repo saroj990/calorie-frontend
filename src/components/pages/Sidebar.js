@@ -6,10 +6,7 @@ import { menu } from "../../constants/menu";
 export const Sidebar = ({ open, onClick }) => {
   return (
     <div>
-      <BsArrowLeftShort
-        onClick={() => onClick(!open)}
-        className="bg-white text-dark-purple text-3xl rounded-full absolute -right-3 top-9 border border-slate-500 cursor-pointer"
-      />
+      <BsArrowLeftShort onClick={() => onClick(!open)} className="myIcon" />
       <div className="flex align-top">
         <span>
           <FcCalendar
