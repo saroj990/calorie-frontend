@@ -15,7 +15,6 @@ const Sidebar = () => {
           </div>
         ))}
       </div>
-
       <div className=" w-full bottom-0 absolute">
         <div className="w-full text-white py-2 bg-slate-600 border-1 text-center font-bold text-whitecursor-pointer">
           {" "}
