@@ -3,7 +3,8 @@ import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { axios, authHelper } from "../../util/auth";
 
 function SignIn() {
   const [isLoading, setIsLoading] = useState(false);
@@ -15,14 +16,13 @@ function SignIn() {
   } = useForm();
 
   const onSubmit = async (formData) => {
-    debugger;
     if (isLoading) return;
 
     setIsLoading(true);
 
     try {
-      const { data } = {}; // await axios.post(`/login`, formData);
-      // authHelper.setUser(data);
+      const { data } = await axios.post(`auth/login`, formData);
+      authHelper.setUser(data);
       toast.success("Successfully Logged in");
       navigate("/", { replace: true });
     } catch (e) {

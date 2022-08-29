@@ -1,10 +1,13 @@
 import classNames from "classnames";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import { axios } from "../../util/auth";
 
 function SignUp() {
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate;
   const {
     register,
     handleSubmit,
@@ -21,7 +24,21 @@ function SignUp() {
   });
 
   const onSubmit = async (formData) => {
-    setIsLoading(false);
+    if (isLoading) return;
+    setIsLoading(true);
+    try {
+      await axios.post(`auth/register`, formData);
+      toast.success("Account created successfully!");
+      navigate("/auth/signin", { replace: true });
+    } catch (e) {
+      !e.response?.data && toast.error(e.message);
+      e.response?.data &&
+        Object.values(e.response?.data)
+          .filter((el) => typeof el != "object")
+          .forEach(toast.error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

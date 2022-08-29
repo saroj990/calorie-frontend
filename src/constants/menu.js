@@ -15,8 +15,4 @@ export const menu = [
     name: "Report",
     key: "report",
   },
-  {
-    name: "User",
-    key: "user",
-  },
 ];
