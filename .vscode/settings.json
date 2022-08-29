@@ -1,17 +1,23 @@
 {
   "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "modifications",
-  "files.trimTrailingWhitespace": true,
-  "files.trimFinalNewlines": true,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "scssFormatter.printWidth": 80,
-  "files.associations": {
-    "*.js": "javascriptreact",
-  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.tabSize": 2
 }
+
+// {
+//   "editor.formatOnSave": true,
+//   "editor.formatOnSaveMode": "modifications",
+//   "files.trimTrailingWhitespace": true,
+//   "files.trimFinalNewlines": true,
+//   "[javascript]": {
+//     "editor.defaultFormatter": "esbenp.prettier-vscode"
+//   },
+//   "[javascriptreact]": {
+//     "editor.defaultFormatter": "esbenp.prettier-vscode"
+//   },
+//   "scssFormatter.printWidth": 80,
+//   "files.associations": {
+//     "*.js": "javascriptreact",
+//   },
+//   "editor.tabSize": 2
+// }
