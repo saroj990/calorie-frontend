@@ -30,7 +30,7 @@ const Sidebar = () => {
         onClick={handleLogout}
       >
         Sign Out
-      </header>
+      </header>     
     </div>
   );
 };
