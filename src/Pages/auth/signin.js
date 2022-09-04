@@ -26,11 +26,7 @@ function SignIn() {
       toast.success("Successfully Logged in");
       navigate("/", { replace: true });
     } catch (e) {
-      !e.response?.data && toast.error(e.message);
-      e.response?.data &&
-        Object.values(e.response?.data).filter(
-          (el) => typeof el != "object".forEach(toast.error)
-        );
+      e.response?.data && toast.error(e.response.data);
     } finally {
       setIsLoading(false);
     }

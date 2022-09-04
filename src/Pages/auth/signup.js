@@ -7,7 +7,7 @@ import { axios } from "../../util/auth";
 
 function SignUp() {
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -31,11 +31,7 @@ function SignUp() {
       toast.success("Account created successfully!");
       navigate("/auth/signin", { replace: true });
     } catch (e) {
-      !e.response?.data && toast.error(e.message);
-      e.response?.data &&
-        Object.values(e.response?.data)
-          .filter((el) => typeof el != "object")
-          .forEach(toast.error);
+      e.response?.data && toast.error(e.response.data);
     } finally {
       setIsLoading(false);
     }
