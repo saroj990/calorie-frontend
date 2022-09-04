@@ -21,7 +21,7 @@ export const Sidebar = ({ open, onClick }) => {
               !open && "scale-0"
             }`}
           >
-            Calorie Counter
+            Welcome, {localStorage.getItem("user")?.fullName}
           </h1>
         </span>
       </div>

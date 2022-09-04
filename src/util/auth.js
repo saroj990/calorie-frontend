@@ -8,10 +8,9 @@ dayjs.extend(utc);
 const authHelper = {
   getUser: () => JSON.parse(localStorage.getItem("user")),
   setUser: (user) => {
-    console.log("setUser was called: ", user);
     localStorage.setItem("user", JSON.stringify(user));
   },
-  isLoggedIn: () => JSON.parse(localStorage.getItem("user"))?.length > 0,
+  isLoggedIn: () => JSON.parse(localStorage.getItem("user"))?.token,
   signOut: () => localStorage.removeItem("user"),
 };
 
